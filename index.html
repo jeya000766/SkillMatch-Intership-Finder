@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMatch - Internship Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Skill<span>Match</span></div>
+    <div class="nav-text">Smart Internship Finder</div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div>
+            <p class="tag">STUDENT CAREER ASSISTANT</p>
+            <h1>Find internships that <span>match your skills.</span></h1>
+            <p class="subtitle">
+                Select what you already know and your preferred domain.
+                SkillMatch compares your profile with internship roles and shows
+                what skills you should improve.
+            </p>
+        </div>
+        <div class="hero-card">
+            <div class="hero-icon">🎯</div>
+            <h3>Skill-based matching</h3>
+            <p>Simple recommendations made for students.</p>
+        </div>
+    </section>
+
+    <section class="workspace">
+
+        <div class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="small-label">STEP 01</p>
+                    <h2>Build your skill profile</h2>
+                </div>
+                <span id="skillCount">0 selected</span>
+            </div>
+
+            <p class="helper">Choose the skills you already have.</p>
+
+            <div class="skills-grid">
+                <label class="skill"><input type="checkbox" value="Python"> <span>🐍 Python</span></label>
+                <label class="skill"><input type="checkbox" value="Java"> <span>☕ Java</span></label>
+                <label class="skill"><input type="checkbox" value="SQL"> <span>🗄️ SQL</span></label>
+                <label class="skill"><input type="checkbox" value="Excel"> <span>📊 Excel</span></label>
+                <label class="skill"><input type="checkbox" value="Power BI"> <span>📈 Power BI</span></label>
+                <label class="skill"><input type="checkbox" value="HTML/CSS"> <span>🌐 HTML/CSS</span></label>
+                <label class="skill"><input type="checkbox" value="JavaScript"> <span>⚡ JavaScript</span></label>
+                <label class="skill"><input type="checkbox" value="Machine Learning"> <span>🤖 Machine Learning</span></label>
+            </div>
+
+            <div class="domain-box">
+                <p class="small-label">STEP 02</p>
+                <h2>Choose your preferred domain</h2>
+                <select id="domain">
+                    <option>Data Analytics</option>
+                    <option>AI / ML</option>
+                    <option>Web Development</option>
+                    <option>Software Development</option>
+                </select>
+            </div>
+
+            <button class="primary-btn" onclick="findInternship()">Find My Internship <span>→</span></button>
+            <button class="reset-btn" onclick="resetApp()">Reset</button>
+        </div>
+
+        <div class="panel preview">
+            <div class="section-title">
+                <div>
+                    <p class="small-label">YOUR DASHBOARD</p>
+                    <h2>Quick overview</h2>
+                </div>
+            </div>
+
+            <div class="overview">
+                <div class="stat">
+                    <strong id="overviewSkills">0</strong>
+                    <span>Skills selected</span>
+                </div>
+                <div class="stat">
+                    <strong id="overviewDomain">Data</strong>
+                    <span>Target domain</span>
+                </div>
+            </div>
+
+            <div class="tips">
+                <h3>💡 Why SkillMatch?</h3>
+                <p>Students often know some skills but are unsure which internship role fits them. This app gives a quick skill-gap view before applying.</p>
+            </div>
+
+            <div class="mini-flow">
+                <div>1<br><b>Select</b></div>
+                <div>→</div>
+                <div>2<br><b>Match</b></div>
+                <div>→</div>
+                <div>3<br><b>Improve</b></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="results" class="results hidden">
+        <div class="results-heading">
+            <div>
+                <p class="small-label">STEP 03</p>
+                <h2>Your internship recommendations</h2>
+                <p id="resultIntro"></p>
+            </div>
+            <div class="match-badge" id="topMatch">0% match</div>
+        </div>
+
+        <div id="recommendations" class="recommendations"></div>
+
+        <div class="gap-section">
+            <div>
+                <p class="small-label">SKILL GAP</p>
+                <h2>What should you learn next?</h2>
+                <p>These skills can improve your internship readiness.</p>
+            </div>
+            <div id="gapList" class="gap-list"></div>
+        </div>
+    </section>
+
+    <section class="problem-solution">
+        <div>
+            <p class="small-label">PROJECT IDEA</p>
+            <h2>Problem → Solution</h2>
+        </div>
+        <div class="ps-card">
+            <h3>Problem</h3>
+            <p>Students struggle to identify internships that match their current skills and often do not know which skills are missing.</p>
+        </div>
+        <div class="ps-card">
+            <h3>Solution</h3>
+            <p>SkillMatch compares selected skills with internship-role requirements and gives a match percentage plus a personalized skill-gap list.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    SkillMatch • Student Internship Recommendation Dashboard
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
